@@ -8,6 +8,7 @@ import { Food } from './food.model';
   <h1>Calorie Tracker</h1>
   <food-list
     [childFoodList]="masterFoodList"
+    [childFoodSearch]="masterFoodList"
   ></food-list>
   <new-food
     (newFoodEmitter)="addFood($event)"
@@ -18,7 +19,10 @@ import { Food } from './food.model';
 
 export class AppComponent {
   public masterFoodList: Food[] = [
-    new Food("Hamburger", "Meat", 500)
+    new Food("Hamburger", "Meat", 700),
+    new Food("Salad", "Leafy", 20),
+    new Food("Ice Cream", "Creamy", 600),
+    new Food("Apple", "Fruity", 150)
   ];
 
   addFood(newFoodFromChild: Food) {
