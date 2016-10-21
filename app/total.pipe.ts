@@ -9,10 +9,10 @@ import { Food } from './food.model';
 export class TotalPipe implements PipeTransform {
 
   transform(input: Food[], foodfilter) {
-    var output: number = 0;
+    var totalCalories: number = 0;
     for (let i = 0; i < input.length; i++) {
-        output += input[i].calories
+        totalCalories += input[i].calories;
     }
-    return output;
+    return totalCalories;
   }
 }

@@ -10,7 +10,9 @@ export class CaloriesPipe implements PipeTransform {
 
   transform(input: Food[], foodfilter) {
     var output: Food[] = [];
-      if (foodfilter === "low") {
+      if (foodfilter === "all") {
+        return input;
+      } else if (foodfilter === "low") {
         for (let i = 0; i < input.length; i++) {
           if (input[i].calories <= 499) {
             output.push(input[i]);

@@ -5,8 +5,9 @@ import { Food } from './food.model';
   selector: 'day-data',
   template: `
     <div *ngIf="childFoodData.length >=1">
-      <h3>Total calories today: {{ childFoodData | total }}</h3>
-      <h3>Average calories per food item today: {{ childFoodData | average}}</h3>
+      <h3>Daily Data</h3>
+      <h5>Total calories today: {{ childFoodData | total }}</h5>
+      <h5>Average calories per food item today: {{ childFoodData | average}}</h5>
     </div>
   `
 })

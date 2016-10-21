@@ -5,19 +5,29 @@ import { Food } from './food.model';
   selector: 'new-food',
   template:  `
     <div>
-      <label>Food Information</label>
-      <input #name placeholder="name">
-      <input #details placeholder="details">
-      <input #calories placeholder="calories" type="number">
-      <button (click)="addFood(name.value, details.value, calories.value); name.value=''; details.value=''; calories.value='';">Add Food</button>
+      <h3>Add Food</h3>
+      <form>
+        <input #newName placeholder ="name"><br>
+        <input #newDetails placeholder="details"><br>
+        <input #newCalories placeholder ="calories" type="number"><br>
+        <button (click)="
+        addFood(newName.value, newDetails.value, newCalories.value);
+        newName.value='';
+        newDetails.value='';
+        newCalories.value='';
+        ">Add Food</button>
+      </form>
     </div>
   `
 })
 
 export class NewFoodComponent {
   @Output() newFoodEmitter = new EventEmitter();
-  addFood(name: string, details: string, calories: number ) {
+  addFood(name: string, details: string, calories: any) {
+    //Why is typescript forcing calories to be a string?
+    calories = parseInt(calories);
     var newFood = new Food (name, details, calories);
+    console.log(newFood);
     this.newFoodEmitter.emit(newFood);
   }
 }
