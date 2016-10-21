@@ -4,7 +4,7 @@ import { Food } from './food.model';
 @Component ({
   selector: 'list-food',
   template: `
-  <div>
+  <div *ngIf="childFoodList.length >=1">
     <h3>List Your Food</h3>
     <select (change)="onChangeCalories($event.target.value)" class="filter">
       <label>Sort by Calories</label>

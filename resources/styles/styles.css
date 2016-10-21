@@ -1,4 +1,27 @@
+body {
+  background-color: #cc0000;
+  color: white;
+
+}
+
 h1 {
-  color: blue;
   text-align: center;
+}
+
+.edit-food {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.new-food {
+  text-align: center;
+   .input {
+
+   }
+npm install gulp-sass gulp-sourcemaps --save-dev
+}
+
+img {
+  max-height: 90%;
+  max-width: 90%;
 }

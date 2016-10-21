@@ -5,13 +5,16 @@ import { Food } from './food.model';
   selector: 'my-app',
   template: `
   <div class='container'>
-    <h1>Daily Calorie Counter</h1>
+    <div class='col-md-12'>
+      <h1>Daily Calorie Counter</h1>
+    </div>
     <div class='col-md-4'>
       <list-food
         [childFoodList]="masterFoodList"
         [childFoodSearch]="masterFoodList"
         (editFoodSender)="showDetails($event)"
       ></list-food>
+      <img src="./../img/burgie.png" alt="burgie">
     </div>
     <div class='col-md-4'>
       <new-food
@@ -26,6 +29,8 @@ import { Food } from './food.model';
       <day-data
         [childFoodData]="masterFoodList"
       ></day-data>
+      <img src="./../img/burgie.png" alt="burgie">
+
     </div>
   </div>
   `
@@ -33,10 +38,6 @@ import { Food } from './food.model';
 
 export class AppComponent {
   public masterFoodList: Food[] = [
-    new Food("Hamburger", "Meat", 700),
-    new Food("Salad", "Leafy", 20),
-    new Food("Ice Cream", "Creamy", 600),
-    new Food("Apple", "Fruity", 150),
   ];
 
   addFood(newFoodFromChild: Food) {
