@@ -8,7 +8,7 @@ import { Food } from './food.model';
       <label>Food Information</label>
       <input #name placeholder="name">
       <input #details placeholder="details">
-      <input #calories placeholder="calories">
+      <input #calories placeholder="calories" type="number">
       <button (click)="addFood(name.value, details.value, calories.value); name.value=''; details.value=''; calories.value='';">Add Food</button>
     </div>
   `
