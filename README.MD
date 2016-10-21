@@ -14,8 +14,9 @@
 
 |Behavior|Input|Output|
 |--------|:---:|-----:|
-|user can input a github username and the system will pull up all the repos of that user|:rloos289:|full repo list for rloos289:|
-
+|user can input a food item with its name, description, and calorie count|"burger", "meat sandwich", "500"|"burger", "meat sandwich", "500"|
+|dropdown menu will sort food by its calorie count | "low "| "salad"|
+|side menu will provide a constantly updating total of the number of calories eaten and the average calories per item | burger: 500, salad: 100| total: 600, average: 300|
 
 ## Support and contact details
 
@@ -24,6 +25,8 @@
 ## Technologies Used
 
 * HTML
+* Node
+* Angular 2
 * Bower
 * SASS
 * Gulp
