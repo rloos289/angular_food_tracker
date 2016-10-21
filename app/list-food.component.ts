@@ -1,19 +1,21 @@
-import { Component, Input, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Food } from './food.model';
 
 @Component ({
-  selector: 'food-list',
+  selector: 'list-food',
   template: `
   <select (change)="onChangeCalories($event.target.value)" class="filter">
     <label>Sort by Calories</label>
+    <option value="none">Sort by calories</option>
     <option value="low"> Low calories</option>
     <option value="high"> High calories</option>
   </select>
 
   <div *ngFor="let currentFood of childFoodList | filteredCalories:selectedCalories">
     <p>Name: {{ currentFood.name }}</p>
-    <p>Details: {{ currentFood.description }}</p>
+    <p>Details: {{ currentFood.details }}</p>
     <p>Calories: {{ currentFood.calories }}</p>
+    <button (click)="editButton(currentFood)">Edit</button>
     <hr>
   </div>
   `
@@ -22,10 +24,14 @@ import { Food } from './food.model';
 export class ListFoodComponent {
   @Input() childFoodList: Food[];
   @Input() childFoodSearch: Food[];
+  @Output() editFoodSender = new EventEmitter();
 
   public selectedCalories: string = "";
   onChangeCalories(targetValue) {
   this.selectedCalories = targetValue;
-}
+  }
 
+  editButton(foodToEdit: Food) {
+    this.editFoodSender.emit(foodToEdit);
+  }
 }
