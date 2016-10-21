@@ -5,7 +5,12 @@ import { AppComponent }  from './app.component';
 import { NewFoodComponent } from './new-food.component'
 import { ListFoodComponent } from './list-food.component'
 import { EditFoodComponent } from './edit-food.component'
+import { DayDataComponent } from './day-data.component'
+
 import { CaloriesPipe } from './calories.pipe'
+import { AveragePipe } from './average.pipe'
+import { TotalPipe } from './total.pipe'
+
 
 @NgModule({
   imports: [
@@ -16,8 +21,11 @@ import { CaloriesPipe } from './calories.pipe'
     AppComponent,
     NewFoodComponent,
     ListFoodComponent,
+    EditFoodComponent,
+    DayDataComponent,
     CaloriesPipe,
-    EditFoodComponent
+    TotalPipe,
+    AveragePipe
    ],
   bootstrap:     [ AppComponent ],
 })

@@ -19,6 +19,9 @@ import { Food } from './food.model';
   <new-food
     (newFoodEmitter)="addFood($event)"
   ></new-food>
+  <day-data
+    [childFoodData]="masterFoodList"
+  ></day-data>
   </div>
   `
 })
